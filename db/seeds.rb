@@ -14,6 +14,6 @@ ingredients_serialized = open(url).read
 ingredients = JSON.parse(ingredients_serialized)
 
 ingredients["drinks"].each do |ingredient|
-  new_ingredients = Ingredient.new(name: "strIngredient1")
+  new_ingredients = Ingredient.new(name: ingredient["strIngredient1"])
   new_ingredients.save
 end
