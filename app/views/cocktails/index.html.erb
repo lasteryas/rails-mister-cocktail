@@ -1,10 +1,23 @@
-<h1>All cocktails</h1>
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1998822d443cf97d75258149476c5aa5&auto=format&fit=crop&w=2098&q=80');">
+  <div class="banner-content">
+    <h1>Drinkeasy</h1>
+    <p>Cool drinks, easy-peasy.</p>
+    <%= link_to "Add a new drink ?", new_cocktail_path, class: "btn-medium" %>
+  </div>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1511715112108-9acc6c3ff61f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ad548838c131107dcc0480052d82a3ba&auto=format&fit=crop&w=2100&q=80');">
+          <div class="card-description">
+            <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<hr>
-<%= link_to "Create a new cocktail", new_cocktail_path %>
+
